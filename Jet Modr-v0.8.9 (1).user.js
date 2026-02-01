@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Jet Modr
-// @version      v 3.0
+// @version      v3.0
 // @author       Jet, 3zs,astive,zylex, modified a bit by notmydemonside
 // @contributor  eliasoupas,margot
 // @description  MooMoo.io Dominator
@@ -12271,3 +12271,4 @@ document.body.style.background = 'white';
     // Your code here...
 
 })();
+
