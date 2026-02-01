@@ -8,6 +8,8 @@
 // @require      https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js
 // @require      https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js
 // @match        *://*.moomoo.io/*
+// @updateURL 	https://github.com/BigNoOne/jetmod/raw/refs/heads/main/Jet%20Modr-v0.8.9%20(1).user.js
+// @downloadURL 	https://github.com/BigNoOne/jetmod/raw/refs/heads/main/Jet%20Modr-v0.8.9%20(1).user.js
 // @run-at       document_start
 // @grant        none
 // @run-in       normal-tabs
@@ -12267,4 +12269,5 @@ document.body.style.background = 'white';
     'use strict';
 
     // Your code here...
+
 })();
