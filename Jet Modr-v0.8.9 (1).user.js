@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Jet Modr
-// @version      v3.0
+// @version      v 3.1
 // @author       Jet, 3zs,astive,zylex, modified a bit by notmydemonside
 // @contributor  eliasoupas,margot
 // @description  MooMoo.io Dominator
@@ -8,9 +8,9 @@
 // @require      https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js
 // @require      https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js
 // @match        *://*.moomoo.io/*
+// @run-at       document_start
 // @updateURL 	https://github.com/BigNoOne/jetmod/raw/refs/heads/main/Jet%20Modr-v0.8.9%20(1).user.js
 // @downloadURL 	https://github.com/BigNoOne/jetmod/raw/refs/heads/main/Jet%20Modr-v0.8.9%20(1).user.js
-// @run-at       document_start
 // @grant        none
 // @run-in       normal-tabs
                                                                                                                                                                                                                                                                                                         //@include /moomoo.io|.*/
@@ -38,7 +38,7 @@ command just to on something or change something:
 
 (() => {
 
-    if (!navigator.userAgent.includes("Chrome")) {
+    if (!navigator.userAgent.includes("Chrome") && window.location.href.includes("moomoo")) {
     document.documentElement.innerHTML = "";
   document.documentElement.style.background = "white";
         if (Notification && Notification.permission !== "granted") {
@@ -847,7 +847,7 @@ var visualsForNow = true;
             };
 
 
-if (typeof jIMKOaL === "undefined") {
+if (typeof jIMKOaL === "undefined" && window.location.href.includes("moomoo")) {
   document.documentElement.innerHTML = "";
   document.documentElement.style.background = "white";
   throw new Error("Anti-skid triggered");
@@ -12269,6 +12269,4 @@ document.body.style.background = 'white';
     'use strict';
 
     // Your code here...
-
 })();
-
