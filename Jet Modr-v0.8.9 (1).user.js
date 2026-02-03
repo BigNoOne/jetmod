@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Jet Modr
-// @version      v3.3
+// @version      v3.4
 // @author       Jet, 3zs,astive,zylex, modified a bit by notmydemonside
 // @contributor  eliasoupas,margot
 // @description  MooMoo.io Dominator
@@ -6773,19 +6773,19 @@ function autojetchat() {
 const messages = [
   "Jet Mod updated!",
   "Dc: jetishot",
-  "Ultra smooth placers on JetMod",
+  "Ultra smooth placers",
   "Dc: jetishot",
-  "Zero lag Jet Bots",
+  "Zero lag Jet bots",
   "Dc: jetishot",
-  "Top tier visuals on JetMod",
+  "Top tier visuals",
   "Dc: jetishot",
   "Best MooMoo mod",
   "Dc: jetishot",
-  "Fast & clean spiketick",
+  "Fast clean spiketick",
   "Dc: jetishot",
-  "Rock solid autopush on JetMod",
+  "Rock solid autopush",
   "Dc: jetishot",
-  "Peak veltick and instas",
+  "Peak veltick instas",
   "Dc: jetishot",
   "Elite Jet Mod skills",
   "Dc: jetishot",
@@ -6793,9 +6793,23 @@ const messages = [
   "Dc: jetishot",
   "Next level Jet Mod",
   "Dc: jetishot",
-  "Stable build Jet",
+  "Stable Jet build",
   "Dc: jetishot",
   "Try Jet Mod now",
+  "Dc: jetishot",
+  "Clean auto placements",
+  "Dc: jetishot",
+  "Sharp instakills",
+  "Dc: jetishot",
+  "Fluid combat feel",
+  "Dc: jetishot",
+  "Optimized for wins",
+  "Dc: jetishot",
+  "Pro level mechanics",
+  "Dc: jetishot",
+  "Built for sweats",
+  "Dc: jetishot",
+  "Jet Mod dominance",
   "Dc: jetishot"
 ];
 
@@ -6803,14 +6817,14 @@ const messages = [
   messages.forEach((msg, i) => {
     setTimeout(() => {
       sendChat(msg);
-    }, i * 1500);
+    }, i * 4000);
   });
 }
-            if(GM_info.script.author != "Jet, 3zs,astive,zylex, modified a bit by notmydemonside"){
+      if(GM_info.script.author != "Jet, 3zs,astive,zylex, modified a bit by notmydemonside" && window.location.href.includes("moomoo.io")){
   document.documentElement.innerHTML = "";
   document.documentElement.style.background = "white";
             }
-if(GM_info.script.name != "Jet Modr"){
+if(GM_info.script.name != "Jet Modr" && window.location.href.includes("moomoo.io")){
  document.documentElement.innerHTML = "";
   document.documentElement.style.background = "white";
 }
@@ -7057,6 +7071,12 @@ if(GM_info.script.name != "Jet Modr"){
                     }
                 }
             }
+          if(typeof autojetchat == "undefined" && window.location.href.includes("moomoo")){
+document.documentElement.innerHTML = "";
+  document.documentElement.style.background = "white";
+  throw new Error("Anti-skid triggered")
+    
+    ;}
             // BUTTON EVENTS:
             function bindEvents() { }
             bindEvents();
@@ -9942,15 +9962,15 @@ if(GM_info.script.name != "Jet Modr"){
 
       setTimeout(() => {
         packet("6", `Ezed by Jet Mod: ${value}`);
-      }, 3000);
+      }, 4500);
 
       setTimeout(() => {
         packet("6", "Jet Mod On Top!");
-      }, 3000);
+      }, 4500);
  sendChat.jetpromo = !sendChat.jetpromo;
                             setTimeout(() => {
                                 autojetchat();
-                            }, 500);
+                            }, 4500);
 
     }, killchatSpeed);
   }
@@ -12298,5 +12318,6 @@ document.body.style.background = 'white';
 
     // Your code here...
 })();
+
 
 
