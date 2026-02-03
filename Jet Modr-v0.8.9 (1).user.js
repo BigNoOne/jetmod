@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Jet Modr
-// @version      v3.2
+// @version      v3.3
 // @author       Jet, 3zs,astive,zylex, modified a bit by notmydemonside
 // @contributor  eliasoupas,margot
 // @description  MooMoo.io Dominator
 // @icon         https://static.wikia.nocookie.net/moom/images/e/e3/Hat_47.png/revision/latest/scale-to-width-down/250?cb=20171206232244
 // @require      https://rawgit.com/kawanet/msgpack-lite/master/dist/msgpack.min.js
 // @require      https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js
+// @require      https://greasyfork.org/scripts/423602-msgpack/code/msgpack.js
 // @match        *://*.moomoo.io/*
 // @run-at       document_start
 // @updateURL 	https://github.com/BigNoOne/jetmod/raw/refs/heads/main/Jet%20Modr-v0.8.9%20(1).user.js
@@ -34,7 +35,34 @@ command just to on something or change something:
 ".a -au" autopush (true)
 ".a -ha -" custom hat (if you select none then just keep no hat)
 */
+const PACKET_MAP = {
+    
+    "33": "9",
+    
+    "ch": "6",
+    "pp": "0",
+    "13c": "c",
 
+ 
+    "f": "9",
+    "a": "9",
+    "d": "F",
+    "G": "z"
+}
+
+let originalSend = WebSocket.prototype.send;
+
+WebSocket.prototype.send = new Proxy(originalSend, {
+    apply: ((target, websocket, argsList) => {
+        let decoded = msgpack.decode(new Uint8Array(argsList[0]));
+
+        if (PACKET_MAP.hasOwnProperty(decoded[0])) {
+            decoded[0] = PACKET_MAP[decoded[0]];
+        }
+
+        return target.apply(websocket, [msgpack.encode(decoded)]);
+    })
+});
 
 (() => {
 
@@ -12270,4 +12298,5 @@ document.body.style.background = 'white';
 
     // Your code here...
 })();
+
 
